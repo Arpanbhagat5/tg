@@ -23,7 +23,7 @@ This repository contains a Django + React demo app.
 │   ├── requirements.txt           # Backend dependencies
 │   ├── start.sh                   # Backend startup script
 │
-├── frontend/                      # React Frontend
+├── fe/                      # React Frontend
 │   ├── src/                       # React source files
 │   ├── public/                    # Static assets
 │   ├── package.json               # Frontend dependencies
