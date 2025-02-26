@@ -82,7 +82,7 @@ make test-be
 To run frontend tests:
 
 ```
-make test-fe
+make test-fe # TBD
 ```
 
 ### Stopping & Restarting Containers
