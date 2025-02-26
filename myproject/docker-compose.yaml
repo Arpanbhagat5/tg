@@ -16,6 +16,11 @@ services:
     command: /app/start.sh
     links:
       - db:db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
   db:
     image: postgres:15
     container_name: pg_db
@@ -33,21 +38,29 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-  frontend:
+  fe:
     build:
-      context: ./frontend  # Assuming your frontend code is in a directory called `frontend`
-    container_name: frontend_app
+      context: ./fe # Path to frontend code
+      dockerfile: Dockerfile
+
+    container_name: fe_app
     ports:
       - "3000:3000"  # Exposes frontend on localhost:3000
     volumes:
-      - ./frontend:/app  # Syncs frontend code changes
+      - ./fe:/app  # Syncs frontend code changes
+      - node_modules:/app/node_modules
     working_dir: /app
-    command: npm start  # Starts the frontend server (assumes you use npm)
+    command: npm run dev # Starts the frontend server (assumes you use npm)
+    # stdin_open: true  # Equivalent to -i in docker run
+    # tty: true  # Equivalent to -t in docker run
     depends_on:
-      - django  # Ensures backend is up before starting frontend
+      django: # Ensures backend is up before starting frontend
+        condition: service_healthy
     environment:
       - CHOKIDAR_USEPOLLING=true  # Fix for file-watching issues in Docker
+      - HOST=0.0.0.0  # Ensures frontend is accessible from outside the container
 
 volumes:
   postgres_data:
+  node_modules:
 
