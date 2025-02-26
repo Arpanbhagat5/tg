@@ -33,6 +33,20 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+  frontend:
+    build:
+      context: ./frontend  # Assuming your frontend code is in a directory called `frontend`
+    container_name: frontend_app
+    ports:
+      - "3000:3000"  # Exposes frontend on localhost:3000
+    volumes:
+      - ./frontend:/app  # Syncs frontend code changes
+    working_dir: /app
+    command: npm start  # Starts the frontend server (assumes you use npm)
+    depends_on:
+      - django  # Ensures backend is up before starting frontend
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # Fix for file-watching issues in Docker
 
 volumes:
   postgres_data:
