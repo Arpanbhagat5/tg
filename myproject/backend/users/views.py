@@ -40,10 +40,6 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
     def create(self, request, *args, **kwargs):
-        # Check if password is provided
-        if "password" in request.data:
-            # Hash the password before saving
-            request.data["password"] = make_password(request.data["password"])
 
         # Call the superclass to handle create
         serializer = self.get_serializer(data=request.data)

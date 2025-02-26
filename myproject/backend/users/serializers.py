@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from users.models import CustomUser, Pref
+from django.contrib.auth.hashers import make_password
 
 
 def validate_tel(value):
@@ -19,6 +20,10 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ["id", "username", "tel", "pref_id", "email", "password"]
         extra_kwargs = {"password": {"write_only": True}}
         read_only_fields = ["id"]
+
+    def validate_password(self, value):
+        """Hash the password before saving"""
+        return make_password(value)
 
 
 class PrefectureSerializer(serializers.ModelSerializer):
