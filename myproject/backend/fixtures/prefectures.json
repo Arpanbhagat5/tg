@@ -1,0 +1,5 @@
+[
+    {"model": "users.pref", "pk": 1, "fields": {"name": "Tokyo"}},
+    {"model": "users.pref", "pk": 2, "fields": {"name": "Osaka"}},
+    {"model": "users.pref", "pk": 3, "fields": {"name": "Hokkaido"}}
+]
