@@ -42,7 +42,7 @@ The entire stack is containerized using Docker for deployment and local developm
 1. Clone the repository
 
 ```
-git clone https://github.com/tg.git
+git clone git@github.com:Arpanbhagat5/tg.git
 cd myproject
 ```
 2. Ensure Docker & Docker Compose are Installed
