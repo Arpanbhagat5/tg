@@ -1,11 +1,7 @@
 # TG
 
 ### Overview
-This repository contains a Django + React full-stack application.
-
-The backend is built using Django + DRF, and the frontend is built using React.
-
-The entire stack is containerized using Docker for deployment and local development.
+This repository contains a Django + React demo app.
 
 ### Tech Stack
 - Backend: Django, Django REST Framework, PostgreSQL
@@ -43,14 +39,12 @@ The entire stack is containerized using Docker for deployment and local developm
 
 ```
 git clone git@github.com:Arpanbhagat5/tg.git
-cd myproject
+cd tg/myproject
 ```
 2. Ensure Docker & Docker Compose are Installed
-You must have Docker and Docker Compose installed on your machine.
 
 ### Running the Application
 1. Start Backend, Frontend, and Database
-The project is containerized, so you can run everything with a single command.
 ```
 make up
 ```
@@ -60,10 +54,7 @@ This will:
 - Start the Django backend
 - Start the React frontend
 
-After running this, the application should be available at:
-
-- Frontend: http://localhost:3000
-- Backend: http://localhost:8000
+Application should be available at: http://localhost:8000
 
 
 ### Managing the Backend (Django)
@@ -106,7 +97,6 @@ make restart
 ```
 
 ### Docker Setup Details
-The application is managed via Docker Compose, which orchestrates:
 
 #### Backend (Django):
 
@@ -166,4 +156,4 @@ docker-compose down -v
 make up
 ```
 
-If you have any questions, feel free to reach out or open an issue!
+If you have any questions, open an issue!
