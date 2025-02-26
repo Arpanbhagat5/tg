@@ -63,7 +63,8 @@ This will:
 After running this, the application should be available at:
 
 - Frontend: http://localhost:3000
-- Backend API: http://localhost:8000
+- Backend: http://localhost:8000
+
 
 ### Managing the Backend (Django)
 2. Apply Migrations
