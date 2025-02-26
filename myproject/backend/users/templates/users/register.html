@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Register with Django form</title>
 </head>
 <body>
-    <h2>Register</h2>
+    <h2>Register with Django form</h2>
     {% if messages %}
         <ul>
             {% for message in messages %}
@@ -18,7 +18,7 @@
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Register</button>
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>

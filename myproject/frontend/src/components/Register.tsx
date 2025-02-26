@@ -59,7 +59,7 @@ export default function Register() {
 
   return (
     <div>
-      <h2>Register</h2>
+      <h2>Register with react setup</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label>Username:</label>
@@ -114,7 +114,7 @@ export default function Register() {
           <p>{errors.pref?.message}</p>
         </div>
 
-        <button type="submit">Register</button>
+        <button type="submit">Submit</button>
       </form>
 
       {/* Display success or error message */}

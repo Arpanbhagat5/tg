@@ -11,5 +11,5 @@ router.register("users", UserViewSet, basename="users")  # common to problem 1,2
 urlpatterns = [
     path("register/", register, name="register"),  # problem 1: using django form
     path("success/", success, name="success"),  # problem 1: using django form
-    path("api/", include(router.urls)),  # common to problem 1,2,3
+    path("", include(router.urls)),  # common to problem 1,2,3
 ]
