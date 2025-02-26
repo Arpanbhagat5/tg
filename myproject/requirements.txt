@@ -1,0 +1,18 @@
+# requirements.txt
+django>=4.0
+django-allauth
+django-extensions
+django-filter
+psycopg2-binary
+gunicorn
+# django rest framework
+djangorestframework
+# cors headers
+django-cors-headers
+# pytest
+pytest
+pytest-django
+# linters and formatters
+black
+isort
+ruff
